@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <h1>Type in top box and press Top button to get text back</h1>
+    <button id="anotherButton">Top Button</button>
+    <textarea id="anotherArea"></textarea>
+    <script>
+      const topButton = document.getElementById('anotherButton');
+      function topButtonClick(){
+        let topText = document.getElementById('anotherArea').value;
+        alert(`you pressed top button and typed "${topText}" in the top area`)
+      }
+      topButton.onclick = topButtonClick;
+
+    </script>
+<h1>Type in bottom box and press Bottom button to get text back</h1>
+      <section>
+      </section>
+  </body>
+  
+  <script>
+    const pg = document.querySelector('section');
+    const texty = document.createElement('textarea');
+    texty.setAttribute('id','textarea2');
+    pg.appendChild(texty);
+    const button = document.createElement('button');
+    button.textContent = "Bottom Button";
+    pg.appendChild(button);
+    function buttonclicked (){
+      let customtext = document.getElementById('textarea2').value;
+      alert(`you pressed button buttom and typed "${customtext}" in the bottom area`);
+    }
+    button.onclick = buttonclicked;
+  </script>
+  <p id="paragraph">
+    stuff to try<br>
+    <h1>SCORE</h1>
+    <h3>Your Score =  <span id="youScore">0</span></h3>
+    <h3>Computer Score = <span id="compScore">0</span></h3>
+    <h3>Draws = <span id="drawScore">0</span></h3>
+
+    <button id="rock">I pick Rock</button>
+    <script>
+      const rock = document.getElementById('rock');
+      function rando(){
+        let x = Math.random();
+        x = String(x).slice(-7,-6);
+        x = Number(x);
+        if (x >= 3) {
+          rando();
+          return;
+        }
+        else if (x === 0){
+          alert('You chose Rock & I chose Rock - It\'s a draw');
+          let drawScore = document.getElementById('drawScore').textContent;
+          drawScore = Number(drawScore);
+          let drawScore2 = ++drawScore;
+          let updateDraws = document.getElementById('drawScore');
+          updateDraws.textContent = drawScore2;
+
+        }
+        else if (x === 1){
+          alert('You chose Rock & I chose Paper - I win this round')
+          let compScore = document.getElementById('compScore').textContent;
+          compScore = Number(compScore);
+          let compScore2 = ++compScore;
+          let updateWins = document.getElementById('compScore');
+          updateWins.textContent = compScore2;
+        }
+        else if (x === 2){
+          alert('You chose Rock & I chose Scissors - You win this round');
+          let youScore = document.getElementById('youScore').textContent;
+          youScore = Number(youScore);
+          let youScore2 = ++youScore;
+          let updateLoss = document.getElementById('youScore');
+          updateLoss.textContent = youScore2;
+        }
+        else {alert(x)};
+      }
+
+      rock.onclick = rando;
+    </script>
+        <button id="paper">I pick Paper</button>
+        <script>
+          const paper = document.getElementById('paper');
+          function rando2(){
+            let x = Math.random();
+            x = String(x).slice(-7,-6);
+            x = Number(x);
+            if (x >= 3) {
+              rando2();
+              return;
+            }
+            else if (x === 0){
+              alert('You chose Paper & I chose Rock - You win this round');
+              let youScore = document.getElementById('youScore').textContent;
+              youScore = Number(youScore);
+              let youScore2 = ++youScore;
+              let updateLoss = document.getElementById('youScore');
+              updateLoss.textContent = youScore2;
+            }
+            else if (x === 1){
+              alert('You chose Paper & I chose Paper - It\'s a draw');
+              let drawScore = document.getElementById('drawScore').textContent;
+              drawScore = Number(drawScore);
+              let drawScore2 = ++drawScore;
+              let updateDraws = document.getElementById('drawScore');
+              updateDraws.textContent = drawScore2;
+
+            }
+            else if (x === 2){
+              alert('You chose Paper & I chose Scissors - I win this round')
+              let compScore = document.getElementById('compScore').textContent;
+              compScore = Number(compScore);
+              let compScore2 = ++compScore;
+              let updateWins = document.getElementById('compScore');
+              updateWins.textContent = compScore2;
+            }
+    
+            else {alert(x)};
+          }
+          paper.onclick = rando2;
+        </script>
+            <button id="scissors">I pick Scissors</button>
+            <script>
+              const scissors = document.getElementById('scissors');
+              function rando3(){
+                let x = Math.random();
+                x = String(x).slice(-7,-6);
+                x = Number(x);
+                if (x >= 3) {
+                  rando3();
+                  return;
+                }
+                else if (x === 0){
+                  alert('You chose Scissors & I chose Rock - I win this round')
+                  let compScore = document.getElementById('compScore').textContent;
+                  compScore = Number(compScore);
+                  let compScore2 = ++compScore;
+                  let updateWins = document.getElementById('compScore');
+                  updateWins.textContent = compScore2;
+                }
+                else if (x === 1){
+                  alert('You chose Scissors & I chose Paper - You win this round');
+                  let youScore = document.getElementById('youScore').textContent;
+                  youScore = Number(youScore);
+                  let youScore2 = ++youScore;
+                  let updateLoss = document.getElementById('youScore');
+                  updateLoss.textContent = youScore2;
+                }
+                else if (x === 2){
+                  alert('You chose Scissors & I chose Scissors - It\'s a draw');
+                  let drawScore = document.getElementById('drawScore').textContent;
+                  drawScore = Number(drawScore);
+                  let drawScore2 = ++drawScore;
+                  let updateDraws = document.getElementById('drawScore');
+                  updateDraws.textContent = drawScore2;
+                }
+        
+                else {alert(x)};
+              }
+              scissors.onclick = rando3;
+            </script>
+    
+  </p>
+</html>
