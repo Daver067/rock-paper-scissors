@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="javascript.js" defer></script>
   <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,11 +10,30 @@
 </head>
 <body>
   <h1>Rock Paper Scissors</h1>
-  <p>You'll have to open the console (f12), type vs() and press enter to play this game. Sorry, Odin made me do it this way.
-    This will be the best out of 5 is the winner. Draws result in another round played.
-    <br><br>
-    If you would like to quit please type quit into the selector and press enter.
-  </p>
-  <script src="javascript.js"></script>
+  <p>Pick a button as your choice! The first to 5 wins is the grand champion.</p>
+
+  <div id="scoreBoard">
+    <div id="yourScoreBoard">
+      <h1>Your Score!!</h1>
+      <p id="yourScore">0</p>
+    </div>
+    <div id="compScoreBoard">
+      <h1>Computer Score</h1>
+      <p id="compScore">0</p>
+    </div>
+  </div>
+
+
+  <div class="buttons">
+  <button class="rock">I Pick Rock!</button>
+  <button class="paper">I Pick Paper!</button>
+  <button class="scissors">I Pick Scissors!</button>
+</div>
+<div id="bottom">
+<p class="youPicked"></p>
+<p id="result"></p>
+</div>
+<br><br><br><br>
+<button class="reset">Reset Score</button>
 </body>
 </html>

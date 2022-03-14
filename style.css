@@ -2,3 +2,29 @@
     background-color: black;
     color: white;
 }
+#scoreBoard {
+    display: flex;
+    gap: 10%;
+    text-align: center;
+}
+
+button {
+    background-color: darkblue;
+}
+
+.rock {
+    color: grey;
+}
+
+.paper {
+    color: wheat;
+}
+
+.scissors {
+    color: orange;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 7%;
+}
